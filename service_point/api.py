@@ -1,15 +1,9 @@
 from typing import Optional
 import requests
-from .config import DHL_API_KEY
-from .errors import handle_response
-from .models import TrackingResponse, ServicePointsResponse
 
-def get_tracking_info(tracking_number: str):
-    url = f"https://api-eu.dhl.com/track/shipments?trackingNumber={tracking_number}"
-    headers = {"DHL-API-Key": DHL_API_KEY}
-    response = requests.get(url, headers=headers)
-    data = handle_response(response)
-    return TrackingResponse.from_api_response(data)
+from common.config import DHL_API_KEY
+from common.errors import handle_response
+from .models import ServicePointsResponse
 
 def get_service_points(country_code: str, address_locality: str, radius: Optional[int] = None):
     if radius:

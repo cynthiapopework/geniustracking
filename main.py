@@ -1,4 +1,5 @@
-from shippings.dhl.api import get_tracking_info, get_service_points
+from tracking.api import get_tracking_info
+from service_point.api import get_service_points
 from dotenv import load_dotenv
 
 def main():
@@ -8,16 +9,18 @@ def main():
     try:
         tracking_info = get_tracking_info(tracking_number)
         print("Tracking Information:")
+        print(f"Shipment ID: {tracking_info.id}")
+        print(f"Current Status: {tracking_info.status}")
         for event in tracking_info.tracking_events:
-            print(event.description)
+            print(f"{event.timestamp} - {event.location} - {event.status}")
     except Exception as e:
         print(f"Error fetching tracking information: {e}")
     
     country_code = "US"
-    city = "New York"
+    address_locality = "New York"
     radius = 500
     try:
-        service_points = get_service_points(country_code, city, radius)
+        service_points = get_service_points(country_code, address_locality, radius)
         print("\nService Points:")
         for point in service_points.service_points:
             print(f"{point.name}, {point.address}")
