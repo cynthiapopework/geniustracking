@@ -7,7 +7,7 @@ class ServicePoint(BaseModel):
         self.address = address
 
     @classmethod
-    def from_api_response(cls, data: Dict):
+    def get_service_points(cls, data: Dict):
         return cls(
             name=data.get('name', 'No name'),
             address=data.get('address', 'No address')
@@ -20,5 +20,5 @@ class ServicePointsResponse(BaseModel):
     @classmethod
     def from_api_response(cls, data: Dict):
         points = data.get('locations', [])
-        service_points = [ServicePoint.from_api_response(point) for point in points]
+        service_points = [ServicePoint.get_service_points(point) for point in points]
         return cls(service_points=service_points)

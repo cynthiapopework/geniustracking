@@ -31,9 +31,7 @@ class ServerError(DHLAPIError):
         super().__init__(self.detail)
 
 def handle_response(response):
-    if response.status_code == 200:
-        return response.json()
-    elif response.status_code == 401:
+    if response.status_code == 401:
         raise AuthenticationError("Authentication failed. Check your API key.")
     elif response.status_code == 404:
         error_data = response.json()
@@ -45,4 +43,5 @@ def handle_response(response):
         error_data = response.json()
         raise ServerError(error_data.get('title', 'No title'), error_data.get('status', 500), error_data.get('detail', 'No detail'))
     else:
-        response.raise_for_status()
+        raise DHLAPIError(f"Unexpected error") 
+

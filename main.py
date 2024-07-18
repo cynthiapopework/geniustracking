@@ -8,7 +8,7 @@ def main():
     tracking_number = "7777777770"
     try:
         tracking_info = get_tracking_info(tracking_number)
-        
+        print(tracking_info)
     except Exception as e:
         print(f"Error fetching tracking information: {e}")
     
@@ -17,7 +17,7 @@ def main():
     radius = 500
     try:
         service_points = get_service_points(country_code, address_locality, radius)
-
+        print(service_points)
     except Exception as e:
         print(f"Error fetching service points: {e}")
 

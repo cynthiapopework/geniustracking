@@ -10,6 +10,15 @@ def get_service_points(country_code: str, address_locality: str, radius: Optiona
     url = f"{DHL_SERVICE_POINT_URL}?countryCode={country_code}&addressLocality={address_locality}&radius={radius_param}"
     headers = {"DHL-API-Key": DHL_API_KEY}
     response = requests.get(url, headers=headers)
-    print(response.text)
-    data = handle_response(response)
-    return ServicePointsResponse.from_api_response(data)
+    if response.status_code == 200:
+        data = response.json()
+        service_points_info = []
+        for location in data.get('locations', []):
+            service_point = {
+                'distance': location.get('distance'),
+                'address': location.get('place', {}).get('address', {})
+            }
+            service_points_info.append(service_point)
+        return {'service_points': service_points_info}
+    else:
+        handle_response(response)
