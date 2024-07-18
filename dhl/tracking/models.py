@@ -17,17 +17,11 @@ class TrackingEvent(BaseModel):
         )
 
 class TrackingResponse(BaseModel):
-    def __init__(self, tracking_events: List[TrackingEvent], id: str, status: str):
+    def __init__(self, tracking_events: List[TrackingEvent]):
         self.tracking_events = tracking_events
-        self.id = id
-        self.status = status
 
     @classmethod
     def from_api_response(cls, data: Dict):
         shipment = data['shipments'][0]
         tracking_events = [TrackingEvent.from_api_response(event) for event in shipment.get('events', [])]
-        return cls(
-            tracking_events=tracking_events,
-            id=shipment.get('id', 'No ID'),
-            status=shipment.get('status', {}).get('status', 'No status')
-        )
+        return cls(tracking_events=tracking_events)

@@ -1,0 +1,65 @@
+{
+	"shipments": [
+		{
+			"id": "7777777770",
+			"service": "Express",
+			"origin": {
+				"address": {
+					"addressLocality": "New York",
+					"addressCountryCode": "US"
+				},
+				"serviceArea": {
+					"facilityCode": "JFK",
+					"facilityName": "John F. Kennedy International Airport"
+				}
+			},
+			"destination": {
+				"address": {
+					"addressLocality": "San Francisco",
+					"addressCountryCode": "US"
+				},
+				"serviceArea": {
+					"facilityCode": "SFO",
+					"facilityName": "San Francisco International Airport"
+				}
+			},
+			"status": {
+				"statusCode": "delivered",
+				"status": "Shipment delivered",
+				"timestamp": "2023-07-15T12:34:56Z"
+			},
+			"events": [
+				{
+					"timestamp": "2023-07-15T12:00:00Z",
+					"location": {
+						"address": {
+							"addressLocality": "San Francisco",
+							"addressCountryCode": "US"
+						},
+						"serviceArea": {
+							"facilityCode": "SFO",
+							"facilityName": "San Francisco International Airport"
+						}
+					},
+					"statusCode": "delivered",
+					"status": "Shipment delivered"
+				},
+				{
+					"timestamp": "2023-07-14T08:00:00Z",
+					"location": {
+						"address": {
+							"addressLocality": "New York",
+							"addressCountryCode": "US"
+						},
+						"serviceArea": {
+							"facilityCode": "JFK",
+							"facilityName": "John F. Kennedy International Airport"
+						}
+					},
+					"statusCode": "in-transit",
+					"status": "Shipment in transit"
+				}
+			]
+		}
+	]
+}

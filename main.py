@@ -1,5 +1,5 @@
-from tracking.api import get_tracking_info
-from service_point.api import get_service_points
+from dhl.service_point.repository import get_service_points
+from dhl.tracking.repository import get_tracking_info
 from dotenv import load_dotenv
 
 def main():

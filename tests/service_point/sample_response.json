@@ -1,0 +1,136 @@
+{
+	"locations": [
+		{
+			"url": "/locations/ZYP303",
+			"location": {
+				"ids": [
+					{
+						"locationId": "ZYP303",
+						"provider": "express"
+					}
+				],
+				"keyword": "",
+				"keywordId": "",
+				"type": "servicepoint"
+			},
+			"name": "DHL EXPRESS",
+			"distance": 455,
+			"place": {
+				"address": {
+					"countryCode": "US",
+					"postalCode": "10007",
+					"addressLocality": "NEW YORK",
+					"streetAddress": "130 CHURCH ST"
+				},
+				"geo": {
+					"latitude": 40.7140889,
+					"longitude": -74.0111
+				}
+			},
+			"openingHours": [
+				{
+					"opens": "09:00:00",
+					"closes": "17:00:00",
+					"dayOfWeek": "http://schema.org/Monday"
+				},
+				{
+					"opens": "09:00:00",
+					"closes": "17:00:00",
+					"dayOfWeek": "http://schema.org/Tuesday"
+				},
+				{
+					"opens": "09:00:00",
+					"closes": "17:00:00",
+					"dayOfWeek": "http://schema.org/Wednesday"
+				},
+				{
+					"opens": "09:00:00",
+					"closes": "17:00:00",
+					"dayOfWeek": "http://schema.org/Thursday"
+				},
+				{
+					"opens": "09:00:00",
+					"closes": "17:00:00",
+					"dayOfWeek": "http://schema.org/Friday"
+				}
+			],
+			"closurePeriods": [],
+			"serviceTypes": [
+				"express:drop-off-easy",
+				"express:drop-off",
+				"express:drop-off-account",
+				"express:pick-up",
+				"express:drop-off-prelabeled"
+			],
+			"averageCapacityDayOfWeek": []
+		},
+		{
+			"url": "/locations/ZYP916",
+			"location": {
+				"ids": [
+					{
+						"locationId": "ZYP916",
+						"provider": "express"
+					}
+				],
+				"keyword": "",
+				"keywordId": "",
+				"type": "servicepoint"
+			},
+			"name": "PARTNER - PACLOT INC",
+			"distance": 833,
+			"place": {
+				"address": {
+					"countryCode": "US",
+					"postalCode": "10013",
+					"addressLocality": "NEW YORK",
+					"streetAddress": "197 Hester St"
+				},
+				"geo": {
+					"latitude": 40.7176098,
+					"longitude": -73.9985277
+				}
+			},
+			"openingHours": [
+				{
+					"opens": "10:00:00",
+					"closes": "17:00:00",
+					"dayOfWeek": "http://schema.org/Monday"
+				},
+				{
+					"opens": "10:00:00",
+					"closes": "17:00:00",
+					"dayOfWeek": "http://schema.org/Tuesday"
+				},
+				{
+					"opens": "10:00:00",
+					"closes": "17:00:00",
+					"dayOfWeek": "http://schema.org/Wednesday"
+				},
+				{
+					"opens": "10:00:00",
+					"closes": "17:00:00",
+					"dayOfWeek": "http://schema.org/Thursday"
+				},
+				{
+					"opens": "10:00:00",
+					"closes": "17:00:00",
+					"dayOfWeek": "http://schema.org/Friday"
+				},
+				{
+					"opens": "10:00:00",
+					"closes": "17:00:00",
+					"dayOfWeek": "http://schema.org/PublicHolidays"
+				}
+			],
+			"closurePeriods": [],
+			"serviceTypes": [
+				"express:drop-off-easy",
+				"express:drop-off",
+				"express:drop-off-account",
+				"express:drop-off-prelabeled"
+			],
+			"averageCapacityDayOfWeek": []
+		}
+	]
+}
